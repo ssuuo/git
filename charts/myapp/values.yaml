@@ -1,20 +1,50 @@
-# image:
-#   repository: 172.18.0.2:30443/project/myapp
-#   tag: "dummy" # Jenkins가 여기 tag만 바꿔줌
-#   pullPolicy: IfNotPresent
-# replicaCount: 1
-# service:
-#   type: ClusterIP
-#   port: 8080
-# imagePullSecrets:
-#   - name: harbor-cred # Harbor용 풀 시크릿 이름(아래에서 생성)
+# Default values for myapp
+replicaCount: 1
+
 image:
-  repository: harbor.harbor.svc.cluster.local/project/myapp
-  tag: "26-cf1a273" # Jenkins가 덮어씀
+  repository: harbor-registry.harbor.svc.cluster.local:5000/project/myapp
+  tag: "latest"
   pullPolicy: IfNotPresent
-imagePullSecrets:
-  - name: harbor-cred
+
+nameOverride: ""
+fullnameOverride: ""
+
 service:
   type: ClusterIP
-  port: 8080
-  targetPort: 8080
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: myapp.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Application specific configs
+config:
+  port: 80

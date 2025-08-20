@@ -1,15 +1,15 @@
-{{- $raw := .Values.service | default (dict) -}}
-{{- $svc := ternary $raw (dict "type" $raw) (kindIs "map" $raw) -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: {{ include "myapp.fullname" . }}
+  labels:
+    {{- include "myapp.labels" . | nindent 4 }}
 spec:
-  type: {{ default "ClusterIP" $svc.type }}
-  selector:
-    app: myapp
+  type: {{ .Values.service.type }}
   ports:
-    - name: http
-      port: {{ default 8080 $svc.port }}
-      targetPort: {{ default 8080 $svc.targetPort }}
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
+      name: http
+  selector:
+    {{- include "myapp.selectorLabels" . | nindent 4 }}
