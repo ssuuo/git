@@ -1,6 +1,6 @@
 image:
   repository: 172.18.0.2:30443/project/myapp
-  tag: "10" # Jenkins가 여기 tag만 바꿔줌
+  tag: "dummy" # Jenkins가 여기 tag만 바꿔줌
   pullPolicy: IfNotPresent
 replicaCount: 1
 service:
