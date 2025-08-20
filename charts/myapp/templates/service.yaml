@@ -1,17 +1,15 @@
-{{- /* 디버그: service의 실제 타입/값 보기 */ -}}
-{{- /* 완료 후 반드시 삭제! */ -}}
-{{- fail (printf "DEBUG .Values.service => type=%T value=%v" .Values.service .Values.service) -}}
-
+{{- $raw := .Values.service | default (dict) -}}
+{{- $svc := ternary $raw (dict "type" $raw) (kindIs "map" $raw) -}}
 apiVersion: v1
 kind: Service
 metadata:
   name: myapp
 spec:
-  type: {{ dig .Values "service" "type" "ClusterIP" }}
+  type: {{ default "ClusterIP" $svc.type }}
   selector:
     app: myapp
   ports:
     - name: http
-      port: {{ dig .Values "service" "port" 8080 }}
-      targetPort: {{ dig .Values "service" "targetPort" 8080 }}
+      port: {{ default 8080 $svc.port }}
+      targetPort: {{ default 8080 $svc.targetPort }}
       protocol: TCP
