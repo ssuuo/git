@@ -1,0 +1,13 @@
+image:
+  repository: harbor.127.0.0.1.nip.io/project/myapp
+  tag: "0.0.1"       # Jenkins가 여기 tag만 바꿔줌
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8080
+
+imagePullSecrets:
+  - name: regcred      # Harbor용 풀 시크릿 이름(아래에서 생성)
