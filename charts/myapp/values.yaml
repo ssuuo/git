@@ -8,12 +8,10 @@
 #   port: 8080
 # imagePullSecrets:
 #   - name: harbor-cred # Harbor용 풀 시크릿 이름(아래에서 생성)
-  
 image:
   repository: harbor.harbor.svc.cluster.local/project/myapp
-  tag: "dummy"   # Jenkins가 덮어씀
+  tag: "24-cf1a273" # Jenkins가 덮어씀
   pullPolicy: IfNotPresent
-
 imagePullSecrets:
   - name: harbor-cred  
 
