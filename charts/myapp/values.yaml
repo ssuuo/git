@@ -2,7 +2,7 @@
 replicaCount: 1
 image:
   repository: 172.18.0.4:30443/project/myapp
-  tag: "47-18db7d6"
+  tag: "48-18db7d6"
   pullPolicy: IfNotPresent
 nameOverride: ""
 fullnameOverride: ""
