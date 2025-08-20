@@ -38,3 +38,6 @@ affinity: {}
 # Application specific configs
 config:
   port: 80
+  # 추가해야 할 부분
+imagePullSecrets:
+  - name: harbor-secret
