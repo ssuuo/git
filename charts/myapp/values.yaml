@@ -2,12 +2,9 @@ image:
   repository: 10.96.209.113:30443/project/myapp
   tag: "10"       # Jenkins가 여기 tag만 바꿔줌
   pullPolicy: IfNotPresent
-
 replicaCount: 1
-
 service:
   type: ClusterIP
   port: 8080
-
 imagePullSecrets:
   - name: harbor-cred      # Harbor용 풀 시크릿 이름(아래에서 생성)
