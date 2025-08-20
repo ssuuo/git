@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 10.96.143.202:80/project/myapp
-  tag: "42-32b3e6b" # Jenkins가 덮어씀
+  tag: "latest" # Jenkins가 덮어씀
   pullPolicy: IfNotPresent
 
 nameOverride: ""
