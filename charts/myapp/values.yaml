@@ -9,8 +9,8 @@
 # imagePullSecrets:
 #   - name: harbor-cred # Harbor용 풀 시크릿 이름(아래에서 생성)
 image:
-  repository: harbor-core.harbor.svc.cluster.local/project/myapp
-  tag: "40-59bf644" # Jenkins가 덮어씀
+  repository: 10.96.143.202:80/project/myapp
+  tag: "42-32b3e6b" # Jenkins가 덮어씀
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: harbor-cred
