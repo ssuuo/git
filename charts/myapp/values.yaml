@@ -7,4 +7,4 @@ service:
   type: ClusterIP
   port: 8080
 imagePullSecrets:
-  - name: harbor-cred      # Harbor용 풀 시크릿 이름(아래에서 생성)
+  - name: harbor-cred # Harbor용 풀 시크릿 이름(아래에서 생성)
