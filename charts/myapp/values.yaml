@@ -4,6 +4,10 @@ image:
   repository: 172.18.0.4:30443/project/myapp
   tag: "48-18db7d6"
   pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: harbor-secret
+
 nameOverride: ""
 fullnameOverride: ""
 service:
@@ -35,9 +39,6 @@ autoscaling:
 nodeSelector: {}
 tolerations: []
 affinity: {}
-# Application specific configs
+
 config:
   port: 80
-  # 추가해야 할 부분
-imagePullSecrets:
-  - name: harbor-secret
