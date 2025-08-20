@@ -16,3 +16,8 @@ image:
 
 imagePullSecrets:
   - name: harbor-cred  
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080

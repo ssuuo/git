@@ -3,8 +3,11 @@ kind: Service
 metadata:
   name: myapp
 spec:
-  selector: { app: myapp }
+  type: {{ dig "service" "type" "ClusterIP" .Values }}
+  selector:
+    app: myapp
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: 80
+    - name: http
+      port: {{ dig "service" "port" 8080 .Values }}
+      targetPort: {{ dig "service" "targetPort" 8080 .Values }}
       protocol: TCP
