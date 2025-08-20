@@ -2,12 +2,10 @@
 replicaCount: 1
 image:
   repository: harbor.local:30443/project/myapp
-  tag: "48-18db7d6"
+  tag: "50-2968f67"
   pullPolicy: IfNotPresent
-
 imagePullSecrets:
   - name: harbor-cred
-
 nameOverride: ""
 fullnameOverride: ""
 service:
@@ -39,6 +37,5 @@ autoscaling:
 nodeSelector: {}
 tolerations: []
 affinity: {}
-
 config:
   port: 80
