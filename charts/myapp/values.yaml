@@ -1,5 +1,5 @@
 image:
-  repository: 10.96.209.113:30443/project/myapp
+  repository: 172.18.0.2:30443/project/myapp
   tag: "10" # Jenkins가 여기 tag만 바꿔줌
   pullPolicy: IfNotPresent
 replicaCount: 1
