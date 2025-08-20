@@ -1,3 +1,7 @@
+{{- /* 디버그: service의 실제 타입/값 보기 */ -}}
+{{- /* 완료 후 반드시 삭제! */ -}}
+{{- fail (printf "DEBUG .Values.service => type=%T value=%v" .Values.service .Values.service) -}}
+
 apiVersion: v1
 kind: Service
 metadata:
