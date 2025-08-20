@@ -1,7 +1,7 @@
 # Default values for myapp
 replicaCount: 1
 image:
-  repository: localhost:30443/project/myapp
+  repository: 172.18.0.4:30443/project/myapp
   tag: "latest"
   pullPolicy: IfNotPresent
 nameOverride: ""
