@@ -17,7 +17,7 @@ spec:
         {{- include "myapp.selectorLabels" . | nindent 8 }}
     spec:
       imagePullSecrets:
-        - name: harbor-secret
+        - name: harbor-cred
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
