@@ -4,7 +4,6 @@ image:
   repository: harbor.local:30443/project/myapp
   tag: "50-2968f67"
   pullPolicy: IfNotPresent
-
 imagePullSecrets:
   - name: harbor-cred
 
@@ -46,6 +45,5 @@ autoscaling:
 nodeSelector: {}
 tolerations: []
 affinity: {}
-
 config:
   port: 80
