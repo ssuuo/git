@@ -1,6 +1,6 @@
 image:
   repository: 172.18.0.2:30443/project/myapp
-  tag: "dummy" # Jenkins가 여기 tag만 바꿔줌
+  tag: "21-d24acce" # Jenkins가 여기 tag만 바꿔줌
   pullPolicy: IfNotPresent
 replicaCount: 1
 service:
@@ -8,4 +8,3 @@ service:
   port: 8080
 imagePullSecrets:
   - name: harbor-cred # Harbor용 풀 시크릿 이름(아래에서 생성)
-  
