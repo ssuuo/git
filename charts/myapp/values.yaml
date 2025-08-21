@@ -2,7 +2,7 @@
 replicaCount: 1
 image:
   repository: harbor.local:30443/project/myapp
-  tag: "54-839c162"
+  tag: "56-839c162"
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: harbor-cred
