@@ -1,7 +1,7 @@
 # Default values for myapp
 replicaCount: 1
 image:
-  repository: harbor.local:30443/project/myapp
+  repository: harbor.local:30443/testproject/myapp
   tag: "dummy"
   pullPolicy: IfNotPresent
 imagePullSecrets:
