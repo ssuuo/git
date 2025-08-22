@@ -2,15 +2,10 @@
 replicaCount: 1
 image:
   repository: harbor.local:30443/project/myapp
-  tag: "57-839c162"
+  tag: "dummy"
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: harbor-cred
-pod:
-  hostAliases:
-    - ip: "172.18.0.4"
-      hostnames:
-        - "harbor.local"
 nameOverride: ""
 fullnameOverride: ""
 service:
