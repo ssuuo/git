@@ -1,8 +1,8 @@
 # Default values for myapp
 replicaCount: 1
 image:
-  repository: harbor.local:30443/testproject/myapp
-  tag: "6-ef38aad"
+  repository: harbor.local:30443/project/myapp
+  tag: "20-83c4e1a"
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: harbor-cred
