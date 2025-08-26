@@ -1,7 +1,7 @@
 # Default values for myapp
 replicaCount: 1
 image:
-  repository: harbor.harbor.svc.cluster.local/project/myapp
+  repository: harbor.local:30443/project/myapp
   tag: "14-e7255c7"
   pullPolicy: IfNotPresent
 imagePullSecrets:
